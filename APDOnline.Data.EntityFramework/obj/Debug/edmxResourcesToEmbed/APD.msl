@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="APDModelStoreContainer" CdmEntityContainer="APD">
+    <EntitySetMapping Name="Answers">
+      <EntityTypeMapping TypeName="APDModel.Answer">
+        <MappingFragment StoreEntitySet="Answers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="AnswerType" ColumnName="AnswerType" />
+          <ScalarProperty Name="LastItem" ColumnName="LastItem" />
+          <ScalarProperty Name="DefaultValue" ColumnName="DefaultValue" />
+          <ScalarProperty Name="OptionForAnswerID" ColumnName="OptionForAnswerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnswersBaks">
+      <EntityTypeMapping TypeName="APDModel.AnswersBak">
+        <MappingFragment StoreEntitySet="AnswersBak">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="AnswerType" ColumnName="AnswerType" />
+          <ScalarProperty Name="LastItem" ColumnName="LastItem" />
+          <ScalarProperty Name="DefaultValue" ColumnName="DefaultValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assessments">
+      <EntityTypeMapping TypeName="APDModel.Assessment">
+        <MappingFragment StoreEntitySet="Assessments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentTaskLists">
+      <EntityTypeMapping TypeName="APDModel.AssessmentTaskList">
+        <MappingFragment StoreEntitySet="AssessmentTaskLists">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TaskListID" ColumnName="TaskListID" />
+          <ScalarProperty Name="AssessmentID" ColumnName="AssessmentID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CountAnnotations">
+      <EntityTypeMapping TypeName="APDModel.CountAnnotation">
+        <MappingFragment StoreEntitySet="CountAnnotations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="CountId" ColumnName="CountId" />
+          <ScalarProperty Name="CountAnnotation1" ColumnName="CountAnnotation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="APDModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="DocumentDescription" ColumnName="DocumentDescription" />
+          <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+          <ScalarProperty Name="StaffingDate" ColumnName="StaffingDate" />
+          <ScalarProperty Name="IsUrgent" ColumnName="IsUrgent" />
+          <ScalarProperty Name="UrgencyNote" ColumnName="UrgencyNote" />
+          <ScalarProperty Name="SupervisorID" ColumnName="SupervisorID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="CountID" ColumnName="CountID" />
+          <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
+          <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+          <ScalarProperty Name="StatusDate" ColumnName="StatusDate" />
+          <ScalarProperty Name="CaseNumber" ColumnName="CaseNumber" />
+          <ScalarProperty Name="IsSupplemental" ColumnName="IsSupplemental" />
+          <ScalarProperty Name="ServedDate" ColumnName="ServedDate" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="BondAmount" ColumnName="BondAmount" />
+          <ScalarProperty Name="IsBond" ColumnName="IsBond" />
+          <ScalarProperty Name="LegalEntityID" ColumnName="LegalEntityID" />
+          <ScalarProperty Name="KnowsOfWarrant" ColumnName="KnowsOfWarrant" />
+          <ScalarProperty Name="IsNCIC" ColumnName="IsNCIC" />
+          <ScalarProperty Name="IsInCustody" ColumnName="IsInCustody" />
+          <ScalarProperty Name="IsVeteran" ColumnName="IsVeteran" />
+          <ScalarProperty Name="BookingNumber" ColumnName="BookingNumber" />
+          <ScalarProperty Name="OriginalDocumentID" ColumnName="OriginalDocumentID" />
+          <ScalarProperty Name="IsAmended" ColumnName="IsAmended" />
+          <ScalarProperty Name="IcisLegalEntityIDofJO" ColumnName="IcisLegalEntityIDofJO" />
+          <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+          <ScalarProperty Name="CreatedOnDateTime" ColumnName="CreatedOnDateTime" />
+          <ScalarProperty Name="ModifiedByUserID" ColumnName="ModifiedByUserID" />
+          <ScalarProperty Name="ModifiedOnDateTime" ColumnName="ModifiedOnDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentItems">
+      <EntityTypeMapping TypeName="APDModel.DocumentItem">
+        <MappingFragment StoreEntitySet="DocumentItem">
+          <ScalarProperty Name="DocumentItemID" ColumnName="DocumentItemID" />
+          <ScalarProperty Name="DocumentItemDescription" ColumnName="DocumentItemDescription" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="DocumentQuickPickTypeID" ColumnName="DocumentQuickPickTypeID" />
+          <ScalarProperty Name="DocumentOptionTypeID" ColumnName="DocumentOptionTypeID" />
+          <ScalarProperty Name="DocumentItemGroupID" ColumnName="DocumentItemGroupID" />
+          <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+          <ScalarProperty Name="CreatedOnDateTime" ColumnName="CreatedOnDateTime" />
+          <ScalarProperty Name="ModifiedByUserID" ColumnName="ModifiedByUserID" />
+          <ScalarProperty Name="ModifiedOnDateTime" ColumnName="ModifiedOnDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentItemGroups">
+      <EntityTypeMapping TypeName="APDModel.DocumentItemGroup">
+        <MappingFragment StoreEntitySet="DocumentItemGroup">
+          <ScalarProperty Name="DocumentItemGroupID" ColumnName="DocumentItemGroupID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentItemMaps">
+      <EntityTypeMapping TypeName="APDModel.DocumentItemMap">
+        <MappingFragment StoreEntitySet="DocumentItemMap">
+          <ScalarProperty Name="DocumentItemMapID" ColumnName="DocumentItemMapID" />
+          <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+          <ScalarProperty Name="DocumentItemID" ColumnName="DocumentItemID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+          <ScalarProperty Name="CreatedOnDateTime" ColumnName="CreatedOnDateTime" />
+          <ScalarProperty Name="ModifiedByUserID" ColumnName="ModifiedByUserID" />
+          <ScalarProperty Name="ModifiedOnDateTime" ColumnName="ModifiedOnDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentMessages">
+      <EntityTypeMapping TypeName="APDModel.DocumentMessage">
+        <MappingFragment StoreEntitySet="DocumentMessage">
+          <ScalarProperty Name="DocumentMessageID" ColumnName="DocumentMessageID" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+          <ScalarProperty Name="CreatedOnDateTime" ColumnName="CreatedOnDateTime" />
+          <ScalarProperty Name="ReadByUserID" ColumnName="ReadByUserID" />
+          <ScalarProperty Name="ReadByOnDateTime" ColumnName="ReadByOnDateTime" />
+          <ScalarProperty Name="MessageType" ColumnName="MessageType" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Flag60Days" ColumnName="Flag60Days" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentOptions">
+      <EntityTypeMapping TypeName="APDModel.DocumentOption">
+        <MappingFragment StoreEntitySet="DocumentOption">
+          <ScalarProperty Name="DocumentOptionID" ColumnName="DocumentOptionID" />
+          <ScalarProperty Name="DocumentOptionTypeID" ColumnName="DocumentOptionTypeID" />
+          <ScalarProperty Name="OptionName" ColumnName="OptionName" />
+          <ScalarProperty Name="OptionValue" ColumnName="OptionValue" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+          <ScalarProperty Name="CreatedOnDateTime" ColumnName="CreatedOnDateTime" />
+          <ScalarProperty Name="ModifiedByUserID" ColumnName="ModifiedByUserID" />
+          <ScalarProperty Name="ModifiedOnDateTime" ColumnName="ModifiedOnDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentOptionTypes">
+      <EntityTypeMapping TypeName="APDModel.DocumentOptionType">
+        <MappingFragment StoreEntitySet="DocumentOptionType">
+          <ScalarProperty Name="DocumentOptionTypeID" ColumnName="DocumentOptionTypeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsMultiSelect" ColumnName="IsMultiSelect" />
+          <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+          <ScalarProperty Name="CreatedOnDateTime" ColumnName="CreatedOnDateTime" />
+          <ScalarProperty Name="ModifiedByUserID" ColumnName="ModifiedByUserID" />
+          <ScalarProperty Name="ModifiedOnDateTime" ColumnName="ModifiedOnDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentQuickPicks">
+      <EntityTypeMapping TypeName="APDModel.DocumentQuickPick">
+        <MappingFragment StoreEntitySet="DocumentQuickPick">
+          <ScalarProperty Name="DocumentQuickPickID" ColumnName="DocumentQuickPickID" />
+          <ScalarProperty Name="DocumentQuickPickTypeID" ColumnName="DocumentQuickPickTypeID" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+          <ScalarProperty Name="CreatedOnDateTime" ColumnName="CreatedOnDateTime" />
+          <ScalarProperty Name="ModifiedByUserID" ColumnName="ModifiedByUserID" />
+          <ScalarProperty Name="ModifiedOnDateTime" ColumnName="ModifiedOnDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentQuickPickTypes">
+      <EntityTypeMapping TypeName="APDModel.DocumentQuickPickType">
+        <MappingFragment StoreEntitySet="DocumentQuickPickType">
+          <ScalarProperty Name="DocumentQuickPickTypeID" ColumnName="DocumentQuickPickTypeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+          <ScalarProperty Name="CreatedOnDateTime" ColumnName="CreatedOnDateTime" />
+          <ScalarProperty Name="ModifiedByUserID" ColumnName="ModifiedByUserID" />
+          <ScalarProperty Name="ModifiedOnDateTime" ColumnName="ModifiedOnDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentResults">
+      <EntityTypeMapping TypeName="APDModel.DocumentResult">
+        <MappingFragment StoreEntitySet="DocumentResult">
+          <ScalarProperty Name="DocumentResultID" ColumnName="DocumentResultID" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="DocumentItemMapID" ColumnName="DocumentItemMapID" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+          <ScalarProperty Name="CreatedOnDateTime" ColumnName="CreatedOnDateTime" />
+          <ScalarProperty Name="ModifiedByUserID" ColumnName="ModifiedByUserID" />
+          <ScalarProperty Name="ModifiedOnDateTime" ColumnName="ModifiedOnDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents1">
+      <EntityTypeMapping TypeName="APDModel.Document1">
+        <MappingFragment StoreEntitySet="Documents">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserIDCreated" ColumnName="UserIDCreated" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserIDModified" ColumnName="UserIDModified" />
+          <ScalarProperty Name="TaskListID" ColumnName="TaskListID" />
+          <ScalarProperty Name="StaffingDate" ColumnName="StaffingDate" />
+          <ScalarProperty Name="UrgencyFlag" ColumnName="UrgencyFlag" />
+          <ScalarProperty Name="UrgencyNote" ColumnName="UrgencyNote" />
+          <ScalarProperty Name="SupervisorID" ColumnName="SupervisorID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="CountID" ColumnName="CountID" />
+          <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="StatusDate" ColumnName="StatusDate" />
+          <ScalarProperty Name="CaseNumber" ColumnName="CaseNumber" />
+          <ScalarProperty Name="SupplementalFlag" ColumnName="SupplementalFlag" />
+          <ScalarProperty Name="ServedDate" ColumnName="ServedDate" />
+          <ScalarProperty Name="VerifiedFlag" ColumnName="VerifiedFlag" />
+          <ScalarProperty Name="BondAmount" ColumnName="BondAmount" />
+          <ScalarProperty Name="BondFlag" ColumnName="BondFlag" />
+          <ScalarProperty Name="LegalEntityID" ColumnName="LegalEntityID" />
+          <ScalarProperty Name="KnowsOfWarrantFlag" ColumnName="KnowsOfWarrantFlag" />
+          <ScalarProperty Name="NCICFlag" ColumnName="NCICFlag" />
+          <ScalarProperty Name="InCustodyFlag" ColumnName="InCustodyFlag" />
+          <ScalarProperty Name="VeteranFlag" ColumnName="VeteranFlag" />
+          <ScalarProperty Name="BookingNumber" ColumnName="BookingNumber" />
+          <ScalarProperty Name="OriginalDocumentID" ColumnName="OriginalDocumentID" />
+          <ScalarProperty Name="AmendedFlag" ColumnName="AmendedFlag" />
+          <ScalarProperty Name="IcisLegalEntityIDofJO" ColumnName="IcisLegalEntityIDofJO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentStatuses">
+      <EntityTypeMapping TypeName="APDModel.DocumentStatus">
+        <MappingFragment StoreEntitySet="DocumentStatuses">
+          <ScalarProperty Name="DocumentStatusID" ColumnName="DocumentStatusID" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="StatusCode_ID" ColumnName="StatusCode_ID" />
+          <ScalarProperty Name="StatusDateTime" ColumnName="StatusDateTime" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+          <ScalarProperty Name="CreatedOnDateTime" ColumnName="CreatedOnDateTime" />
+          <ScalarProperty Name="ModifiedByUserID" ColumnName="ModifiedByUserID" />
+          <ScalarProperty Name="ModifiedOnDateTime" ColumnName="ModifiedOnDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentTypes">
+      <EntityTypeMapping TypeName="APDModel.DocumentType">
+        <MappingFragment StoreEntitySet="DocumentType">
+          <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="ParentDocumentID" ColumnName="ParentDocumentID" />
+          <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+          <ScalarProperty Name="CreatedOnDateTime" ColumnName="CreatedOnDateTime" />
+          <ScalarProperty Name="ModifiedByUserID" ColumnName="ModifiedByUserID" />
+          <ScalarProperty Name="ModifiedOnDateTime" ColumnName="ModifiedOnDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProbationHistories">
+      <EntityTypeMapping TypeName="APDModel.ProbationHistory">
+        <MappingFragment StoreEntitySet="ProbationHistory">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="SupervisionType" ColumnName="SupervisionType" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="UserIDCreated" ColumnName="UserIDCreated" />
+          <ScalarProperty Name="UserIDModified" ColumnName="UserIDModified" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EffectiveId" ColumnName="EffectiveId" />
+          <ScalarProperty Name="SupervisionTypeId" ColumnName="SupervisionTypeId" />
+          <ScalarProperty Name="CountId" ColumnName="CountId" />
+          <ScalarProperty Name="CountNumber" ColumnName="CountNumber" />
+          <ScalarProperty Name="LengthInt" ColumnName="LengthInt" />
+          <ScalarProperty Name="Length_CodeId" ColumnName="Length_CodeId" />
+          <ScalarProperty Name="LengthString" ColumnName="LengthString" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="APDModel.Question">
+        <MappingFragment StoreEntitySet="Questions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="AssessmentID" ColumnName="AssessmentID" />
+          <ScalarProperty Name="ConditionNumber" ColumnName="ConditionNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RenderedResults">
+      <EntityTypeMapping TypeName="APDModel.RenderedResult">
+        <MappingFragment StoreEntitySet="RenderedResults">
+          <ScalarProperty Name="RenderedResultID" ColumnName="RenderedResultID" />
+          <ScalarProperty Name="RenderedText" ColumnName="RenderedText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="APDModel.Result">
+        <MappingFragment StoreEntitySet="Results">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+          <ScalarProperty Name="ResultInt" ColumnName="ResultInt" />
+          <ScalarProperty Name="ResultText" ColumnName="ResultText" />
+          <ScalarProperty Name="ResultDate" ColumnName="ResultDate" />
+          <ScalarProperty Name="ResultMoney" ColumnName="ResultMoney" />
+          <ScalarProperty Name="ResultBool" ColumnName="ResultBool" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="AnswerType" ColumnName="AnswerType" />
+          <ScalarProperty Name="ConditionNumber" ColumnName="ConditionNumber" />
+          <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+          <ScalarProperty Name="ConditionEnumeration" ColumnName="ConditionEnumeration" />
+          <ScalarProperty Name="RenderedResultID" ColumnName="RenderedResultID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResultsBaks">
+      <EntityTypeMapping TypeName="APDModel.ResultsBak">
+        <MappingFragment StoreEntitySet="ResultsBak">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+          <ScalarProperty Name="ResultInt" ColumnName="ResultInt" />
+          <ScalarProperty Name="ResultText" ColumnName="ResultText" />
+          <ScalarProperty Name="ResultDate" ColumnName="ResultDate" />
+          <ScalarProperty Name="ResultMoney" ColumnName="ResultMoney" />
+          <ScalarProperty Name="ResultBool" ColumnName="ResultBool" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="AnswerType" ColumnName="AnswerType" />
+          <ScalarProperty Name="ConditionNumber" ColumnName="ConditionNumber" />
+          <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskLists">
+      <EntityTypeMapping TypeName="APDModel.TaskList">
+        <MappingFragment StoreEntitySet="TaskLists">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="APDModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="APDModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

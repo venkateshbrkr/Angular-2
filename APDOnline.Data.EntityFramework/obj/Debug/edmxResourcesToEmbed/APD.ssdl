@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="APDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Answers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="QuestionID" Type="int" Nullable="false" />
+    <Property Name="AnswerType" Type="int" Nullable="false" />
+    <Property Name="LastItem" Type="bit" Nullable="false" />
+    <Property Name="DefaultValue" Type="int" Nullable="false" />
+    <Property Name="OptionForAnswerID" Type="int" />
+  </EntityType>
+  <EntityType Name="AnswersBak">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="QuestionID" Type="int" Nullable="false" />
+    <Property Name="AnswerType" Type="int" Nullable="false" />
+    <Property Name="LastItem" Type="bit" Nullable="false" />
+    <Property Name="DefaultValue" Type="int" />
+  </EntityType>
+  <EntityType Name="Assessments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AssessmentTaskLists">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TaskListID" Type="int" Nullable="false" />
+    <Property Name="AssessmentID" Type="int" Nullable="false" />
+    <Property Name="SortOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="CountAnnotations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentId" Type="int" Nullable="false" />
+    <Property Name="CountId" Type="int" />
+    <Property Name="CountAnnotation" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerCode" Type="nvarchar(max)" />
+    <Property Name="CompanyName" Type="nvarchar(max)" />
+    <Property Name="AddressLine1" Type="nvarchar(max)" />
+    <Property Name="AddressLine2" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="State" Type="nvarchar(max)" />
+    <Property Name="ZipCode" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="DateUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+    </Key>
+    <Property Name="DocumentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientID" Type="int" Nullable="false" />
+    <Property Name="DocumentDescription" Type="varchar" MaxLength="250" />
+    <Property Name="DocumentTypeID" Type="int" Nullable="false" />
+    <Property Name="StaffingDate" Type="datetime2" Precision="7" />
+    <Property Name="IsUrgent" Type="bit" Nullable="false" />
+    <Property Name="UrgencyNote" Type="varchar(max)" />
+    <Property Name="SupervisorID" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="CountID" Type="int" />
+    <Property Name="ServiceTypeID" Type="int" />
+    <Property Name="StatusType" Type="varchar" MaxLength="50" />
+    <Property Name="StatusDate" Type="datetime2" Precision="7" />
+    <Property Name="CaseNumber" Type="varchar" MaxLength="50" />
+    <Property Name="IsSupplemental" Type="bit" Nullable="false" />
+    <Property Name="ServedDate" Type="datetime2" Precision="7" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="BondAmount" Type="money" />
+    <Property Name="IsBond" Type="int" />
+    <Property Name="LegalEntityID" Type="int" />
+    <Property Name="KnowsOfWarrant" Type="bit" />
+    <Property Name="IsNCIC" Type="bit" />
+    <Property Name="IsInCustody" Type="bit" />
+    <Property Name="IsVeteran" Type="bit" />
+    <Property Name="BookingNumber" Type="varchar" MaxLength="500" />
+    <Property Name="OriginalDocumentID" Type="int" />
+    <Property Name="IsAmended" Type="bit" />
+    <Property Name="IcisLegalEntityIDofJO" Type="int" />
+    <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+    <Property Name="CreatedOnDateTime" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="ModifiedByUserID" Type="int" />
+    <Property Name="ModifiedOnDateTime" Type="datetime2" Precision="3" />
+  </EntityType>
+  <EntityType Name="DocumentItem">
+    <Key>
+      <PropertyRef Name="DocumentItemID" />
+    </Key>
+    <Property Name="DocumentItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentItemDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ShortName" Type="varchar" MaxLength="50" />
+    <Property Name="DocumentQuickPickTypeID" Type="int" />
+    <Property Name="DocumentOptionTypeID" Type="int" />
+    <Property Name="DocumentItemGroupID" Type="int" Nullable="false" />
+    <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+    <Property Name="CreatedOnDateTime" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="ModifiedByUserID" Type="int" />
+    <Property Name="ModifiedOnDateTime" Type="datetime2" Precision="3" />
+  </EntityType>
+  <EntityType Name="DocumentItemGroup">
+    <Key>
+      <PropertyRef Name="DocumentItemGroupID" />
+    </Key>
+    <Property Name="DocumentItemGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentItemMap">
+    <Key>
+      <PropertyRef Name="DocumentItemMapID" />
+    </Key>
+    <Property Name="DocumentItemMapID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentTypeID" Type="int" Nullable="false" />
+    <Property Name="DocumentItemID" Type="int" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+    <Property Name="CreatedOnDateTime" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="ModifiedByUserID" Type="int" />
+    <Property Name="ModifiedOnDateTime" Type="datetime2" Precision="3" />
+  </EntityType>
+  <EntityType Name="DocumentMessage">
+    <Key>
+      <PropertyRef Name="DocumentMessageID" />
+    </Key>
+    <Property Name="DocumentMessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentID" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="CreatedByUserID" Type="int" />
+    <Property Name="CreatedOnDateTime" Type="datetime" />
+    <Property Name="ReadByUserID" Type="int" />
+    <Property Name="ReadByOnDateTime" Type="datetime" />
+    <Property Name="MessageType" Type="varchar" MaxLength="50" />
+    <Property Name="Message" Type="varchar" MaxLength="500" />
+    <Property Name="Flag60Days" Type="bit" />
+  </EntityType>
+  <EntityType Name="DocumentOption">
+    <Key>
+      <PropertyRef Name="DocumentOptionID" />
+    </Key>
+    <Property Name="DocumentOptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentOptionTypeID" Type="int" Nullable="false" />
+    <Property Name="OptionName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OptionValue" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+    <Property Name="CreatedOnDateTime" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="ModifiedByUserID" Type="int" />
+    <Property Name="ModifiedOnDateTime" Type="datetime2" Precision="3" />
+  </EntityType>
+  <EntityType Name="DocumentOptionType">
+    <Key>
+      <PropertyRef Name="DocumentOptionTypeID" />
+    </Key>
+    <Property Name="DocumentOptionTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsMultiSelect" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+    <Property Name="CreatedOnDateTime" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="ModifiedByUserID" Type="int" />
+    <Property Name="ModifiedOnDateTime" Type="datetime2" Precision="3" />
+  </EntityType>
+  <EntityType Name="DocumentQuickPick">
+    <Key>
+      <PropertyRef Name="DocumentQuickPickID" />
+    </Key>
+    <Property Name="DocumentQuickPickID" Type="money" Nullable="false" />
+    <Property Name="DocumentQuickPickTypeID" Type="int" Nullable="false" />
+    <Property Name="ShortName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+    <Property Name="CreatedOnDateTime" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="ModifiedByUserID" Type="int" />
+    <Property Name="ModifiedOnDateTime" Type="datetime2" Precision="3" />
+  </EntityType>
+  <EntityType Name="DocumentQuickPickType">
+    <Key>
+      <PropertyRef Name="DocumentQuickPickTypeID" />
+    </Key>
+    <Property Name="DocumentQuickPickTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+    <Property Name="CreatedOnDateTime" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="ModifiedByUserID" Type="int" />
+    <Property Name="ModifiedOnDateTime" Type="datetime2" Precision="3" />
+  </EntityType>
+  <EntityType Name="DocumentResult">
+    <Key>
+      <PropertyRef Name="DocumentResultID" />
+    </Key>
+    <Property Name="DocumentResultID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentID" Type="int" Nullable="false" />
+    <Property Name="DocumentItemMapID" Type="int" Nullable="false" />
+    <Property Name="Result" Type="varchar(max)" />
+    <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+    <Property Name="CreatedOnDateTime" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="ModifiedByUserID" Type="int" />
+    <Property Name="ModifiedOnDateTime" Type="datetime2" Precision="3" />
+  </EntityType>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserIDCreated" Type="int" Nullable="false" />
+    <Property Name="ClientID" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="UserIDModified" Type="int" />
+    <Property Name="TaskListID" Type="int" Nullable="false" />
+    <Property Name="StaffingDate" Type="datetime" />
+    <Property Name="UrgencyFlag" Type="bit" Nullable="false" />
+    <Property Name="UrgencyNote" Type="nvarchar(max)" />
+    <Property Name="SupervisorID" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="CountID" Type="int" />
+    <Property Name="ServiceTypeID" Type="int" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="StatusDate" Type="datetime" />
+    <Property Name="CaseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="SupplementalFlag" Type="bit" Nullable="false" />
+    <Property Name="ServedDate" Type="datetime" />
+    <Property Name="VerifiedFlag" Type="bit" Nullable="false" />
+    <Property Name="BondAmount" Type="money" />
+    <Property Name="BondFlag" Type="int" />
+    <Property Name="LegalEntityID" Type="int" />
+    <Property Name="KnowsOfWarrantFlag" Type="bit" />
+    <Property Name="NCICFlag" Type="bit" />
+    <Property Name="InCustodyFlag" Type="bit" />
+    <Property Name="VeteranFlag" Type="bit" />
+    <Property Name="BookingNumber" Type="varchar" MaxLength="500" />
+    <Property Name="OriginalDocumentID" Type="int" />
+    <Property Name="AmendedFlag" Type="bit" />
+    <Property Name="IcisLegalEntityIDofJO" Type="int" />
+  </EntityType>
+  <EntityType Name="DocumentStatuses">
+    <Key>
+      <PropertyRef Name="DocumentStatusID" />
+    </Key>
+    <Property Name="DocumentStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentID" Type="int" Nullable="false" />
+    <Property Name="StatusCode_ID" Type="int" />
+    <Property Name="StatusDateTime" Type="datetime" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="CreatedByUserID" Type="int" />
+    <Property Name="CreatedOnDateTime" Type="datetime" />
+    <Property Name="ModifiedByUserID" Type="int" />
+    <Property Name="ModifiedOnDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="DocumentTypeID" />
+    </Key>
+    <Property Name="DocumentTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShortName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DocumentName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="ParentDocumentID" Type="int" Nullable="false" />
+    <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+    <Property Name="CreatedOnDateTime" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="ModifiedByUserID" Type="int" />
+    <Property Name="ModifiedOnDateTime" Type="datetime2" Precision="3" />
+  </EntityType>
+  <EntityType Name="ProbationHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentId" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EffectiveDate" Type="datetime" />
+    <Property Name="SupervisionType" Type="varchar" MaxLength="250" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="UserIDCreated" Type="int" />
+    <Property Name="UserIDModified" Type="int" />
+    <Property Name="EventId" Type="int" />
+    <Property Name="EffectiveId" Type="int" />
+    <Property Name="SupervisionTypeId" Type="int" />
+    <Property Name="CountId" Type="int" />
+    <Property Name="CountNumber" Type="varchar" MaxLength="50" />
+    <Property Name="LengthInt" Type="int" />
+    <Property Name="Length_CodeId" Type="int" />
+    <Property Name="LengthString" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="AssessmentID" Type="int" Nullable="false" />
+    <Property Name="ConditionNumber" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RenderedResults">
+    <Key>
+      <PropertyRef Name="RenderedResultID" />
+    </Key>
+    <Property Name="RenderedResultID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RenderedText" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Results">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuestionID" Type="int" Nullable="false" />
+    <Property Name="AnswerID" Type="int" Nullable="false" />
+    <Property Name="ResultInt" Type="int" />
+    <Property Name="ResultText" Type="nvarchar(max)" />
+    <Property Name="ResultDate" Type="datetime" />
+    <Property Name="ResultMoney" Type="money" />
+    <Property Name="ResultBool" Type="bit" />
+    <Property Name="DocumentID" Type="int" Nullable="false" />
+    <Property Name="AnswerType" Type="int" Nullable="false" />
+    <Property Name="ConditionNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConditionID" Type="int" />
+    <Property Name="ConditionEnumeration" Type="int" />
+    <Property Name="RenderedResultID" Type="int" />
+  </EntityType>
+  <EntityType Name="ResultsBak">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuestionID" Type="int" Nullable="false" />
+    <Property Name="AnswerID" Type="int" Nullable="false" />
+    <Property Name="ResultInt" Type="int" />
+    <Property Name="ResultText" Type="nvarchar(max)" />
+    <Property Name="ResultDate" Type="datetime" />
+    <Property Name="ResultMoney" Type="money" />
+    <Property Name="ResultBool" Type="bit" />
+    <Property Name="DocumentID" Type="int" Nullable="false" />
+    <Property Name="AnswerType" Type="int" Nullable="false" />
+    <Property Name="ConditionNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConditionID" Type="int" />
+  </EntityType>
+  <EntityType Name="TaskLists">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="EmailAddress" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="AddressLine1" Type="nvarchar(max)" />
+    <Property Name="AddressLine2" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="State" Type="nvarchar(max)" />
+    <Property Name="ZipCode" Type="nvarchar(max)" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="DateUpdated" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_AssessmentAssessmentTaskList">
+    <End Role="Assessments" Type="Self.Assessments" Multiplicity="1" />
+    <End Role="AssessmentTaskLists" Type="Self.AssessmentTaskLists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Assessments">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AssessmentTaskLists">
+        <PropertyRef Name="AssessmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountAnnotations_Documents">
+    <End Role="Documents" Type="Self.Documents" Multiplicity="1" />
+    <End Role="CountAnnotations" Type="Self.CountAnnotations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documents">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CountAnnotations">
+        <PropertyRef Name="DocumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_DocumentType">
+    <End Role="DocumentType" Type="Self.DocumentType" Multiplicity="1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="DocumentTypeID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="DocumentTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentItem_DocumentItemGroup">
+    <End Role="DocumentItemGroup" Type="Self.DocumentItemGroup" Multiplicity="1" />
+    <End Role="DocumentItem" Type="Self.DocumentItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentItemGroup">
+        <PropertyRef Name="DocumentItemGroupID" />
+      </Principal>
+      <Dependent Role="DocumentItem">
+        <PropertyRef Name="DocumentItemGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentItemMap_DocumentItem">
+    <End Role="DocumentItem" Type="Self.DocumentItem" Multiplicity="1" />
+    <End Role="DocumentItemMap" Type="Self.DocumentItemMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentItem">
+        <PropertyRef Name="DocumentItemID" />
+      </Principal>
+      <Dependent Role="DocumentItemMap">
+        <PropertyRef Name="DocumentItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentItemMap_DocumentType">
+    <End Role="DocumentType" Type="Self.DocumentType" Multiplicity="1" />
+    <End Role="DocumentItemMap" Type="Self.DocumentItemMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="DocumentTypeID" />
+      </Principal>
+      <Dependent Role="DocumentItemMap">
+        <PropertyRef Name="DocumentTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentMessage_Documents">
+    <End Role="Documents" Type="Self.Documents" Multiplicity="1" />
+    <End Role="DocumentMessage" Type="Self.DocumentMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documents">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DocumentMessage">
+        <PropertyRef Name="DocumentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentOption_DocumentOptionType">
+    <End Role="DocumentOptionType" Type="Self.DocumentOptionType" Multiplicity="1" />
+    <End Role="DocumentOption" Type="Self.DocumentOption" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentOptionType">
+        <PropertyRef Name="DocumentOptionTypeID" />
+      </Principal>
+      <Dependent Role="DocumentOption">
+        <PropertyRef Name="DocumentOptionTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentQuickPick_DocumentQuickPickType">
+    <End Role="DocumentQuickPickType" Type="Self.DocumentQuickPickType" Multiplicity="1" />
+    <End Role="DocumentQuickPick" Type="Self.DocumentQuickPick" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentQuickPickType">
+        <PropertyRef Name="DocumentQuickPickTypeID" />
+      </Principal>
+      <Dependent Role="DocumentQuickPick">
+        <PropertyRef Name="DocumentQuickPickTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentResult">
+    <End Role="Documents" Type="Self.Documents" Multiplicity="1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documents">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="DocumentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentResult_Document">
+    <End Role="Document" Type="Self.Document" Multiplicity="1" />
+    <End Role="DocumentResult" Type="Self.DocumentResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Document">
+        <PropertyRef Name="DocumentID" />
+      </Principal>
+      <Dependent Role="DocumentResult">
+        <PropertyRef Name="DocumentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentResult_DocumentItemMap">
+    <End Role="DocumentItemMap" Type="Self.DocumentItemMap" Multiplicity="1" />
+    <End Role="DocumentResult" Type="Self.DocumentResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentItemMap">
+        <PropertyRef Name="DocumentItemMapID" />
+      </Principal>
+      <Dependent Role="DocumentResult">
+        <PropertyRef Name="DocumentItemMapID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentsProbationHistory">
+    <End Role="Documents" Type="Self.Documents" Multiplicity="1" />
+    <End Role="ProbationHistory" Type="Self.ProbationHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documents">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProbationHistory">
+        <PropertyRef Name="DocumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentStatus_Documents">
+    <End Role="Documents" Type="Self.Documents" Multiplicity="1" />
+    <End Role="DocumentStatuses" Type="Self.DocumentStatuses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documents">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DocumentStatuses">
+        <PropertyRef Name="DocumentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuestionAnswer">
+    <End Role="Questions" Type="Self.Questions" Multiplicity="1" />
+    <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Answers">
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Results_RenderedResults">
+    <End Role="RenderedResults" Type="Self.RenderedResults" Multiplicity="0..1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RenderedResults">
+        <PropertyRef Name="RenderedResultID" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="RenderedResultID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskListAssessmentTaskList">
+    <End Role="TaskLists" Type="Self.TaskLists" Multiplicity="1" />
+    <End Role="AssessmentTaskLists" Type="Self.AssessmentTaskLists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskLists">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AssessmentTaskLists">
+        <PropertyRef Name="TaskListID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskListDocument">
+    <End Role="TaskLists" Type="Self.TaskLists" Multiplicity="1" />
+    <End Role="Documents" Type="Self.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskLists">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="TaskListID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="APDModelStoreContainer">
+    <EntitySet Name="Answers" EntityType="Self.Answers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnswersBak" EntityType="Self.AnswersBak" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Assessments" EntityType="Self.Assessments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentTaskLists" EntityType="Self.AssessmentTaskLists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CountAnnotations" EntityType="Self.CountAnnotations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentItem" EntityType="Self.DocumentItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentItemGroup" EntityType="Self.DocumentItemGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentItemMap" EntityType="Self.DocumentItemMap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentMessage" EntityType="Self.DocumentMessage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentOption" EntityType="Self.DocumentOption" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentOptionType" EntityType="Self.DocumentOptionType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentQuickPick" EntityType="Self.DocumentQuickPick" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentQuickPickType" EntityType="Self.DocumentQuickPickType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentResult" EntityType="Self.DocumentResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documents" EntityType="Self.Documents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentStatuses" EntityType="Self.DocumentStatuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentType" EntityType="Self.DocumentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProbationHistory" EntityType="Self.ProbationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RenderedResults" EntityType="Self.RenderedResults" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Results" EntityType="Self.Results" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResultsBak" EntityType="Self.ResultsBak" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskLists" EntityType="Self.TaskLists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AssessmentAssessmentTaskList" Association="Self.FK_AssessmentAssessmentTaskList">
+      <End Role="Assessments" EntitySet="Assessments" />
+      <End Role="AssessmentTaskLists" EntitySet="AssessmentTaskLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountAnnotations_Documents" Association="Self.FK_CountAnnotations_Documents">
+      <End Role="Documents" EntitySet="Documents" />
+      <End Role="CountAnnotations" EntitySet="CountAnnotations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_DocumentType" Association="Self.FK_Document_DocumentType">
+      <End Role="DocumentType" EntitySet="DocumentType" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentItem_DocumentItemGroup" Association="Self.FK_DocumentItem_DocumentItemGroup">
+      <End Role="DocumentItemGroup" EntitySet="DocumentItemGroup" />
+      <End Role="DocumentItem" EntitySet="DocumentItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentItemMap_DocumentItem" Association="Self.FK_DocumentItemMap_DocumentItem">
+      <End Role="DocumentItem" EntitySet="DocumentItem" />
+      <End Role="DocumentItemMap" EntitySet="DocumentItemMap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentItemMap_DocumentType" Association="Self.FK_DocumentItemMap_DocumentType">
+      <End Role="DocumentType" EntitySet="DocumentType" />
+      <End Role="DocumentItemMap" EntitySet="DocumentItemMap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentMessage_Documents" Association="Self.FK_DocumentMessage_Documents">
+      <End Role="Documents" EntitySet="Documents" />
+      <End Role="DocumentMessage" EntitySet="DocumentMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentOption_DocumentOptionType" Association="Self.FK_DocumentOption_DocumentOptionType">
+      <End Role="DocumentOptionType" EntitySet="DocumentOptionType" />
+      <End Role="DocumentOption" EntitySet="DocumentOption" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentQuickPick_DocumentQuickPickType" Association="Self.FK_DocumentQuickPick_DocumentQuickPickType">
+      <End Role="DocumentQuickPickType" EntitySet="DocumentQuickPickType" />
+      <End Role="DocumentQuickPick" EntitySet="DocumentQuickPick" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentResult" Association="Self.FK_DocumentResult">
+      <End Role="Documents" EntitySet="Documents" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentResult_Document" Association="Self.FK_DocumentResult_Document">
+      <End Role="Document" EntitySet="Document" />
+      <End Role="DocumentResult" EntitySet="DocumentResult" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentResult_DocumentItemMap" Association="Self.FK_DocumentResult_DocumentItemMap">
+      <End Role="DocumentItemMap" EntitySet="DocumentItemMap" />
+      <End Role="DocumentResult" EntitySet="DocumentResult" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentsProbationHistory" Association="Self.FK_DocumentsProbationHistory">
+      <End Role="Documents" EntitySet="Documents" />
+      <End Role="ProbationHistory" EntitySet="ProbationHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentStatus_Documents" Association="Self.FK_DocumentStatus_Documents">
+      <End Role="Documents" EntitySet="Documents" />
+      <End Role="DocumentStatuses" EntitySet="DocumentStatuses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuestionAnswer" Association="Self.FK_QuestionAnswer">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Answers" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Results_RenderedResults" Association="Self.FK_Results_RenderedResults">
+      <End Role="RenderedResults" EntitySet="RenderedResults" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskListAssessmentTaskList" Association="Self.FK_TaskListAssessmentTaskList">
+      <End Role="TaskLists" EntitySet="TaskLists" />
+      <End Role="AssessmentTaskLists" EntitySet="AssessmentTaskLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskListDocument" Association="Self.FK_TaskListDocument">
+      <End Role="TaskLists" EntitySet="TaskLists" />
+      <End Role="Documents" EntitySet="Documents" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

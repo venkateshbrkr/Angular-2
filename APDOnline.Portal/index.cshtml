@@ -1,0 +1,107 @@
+﻿
+@{
+
+
+    string title = System.Configuration.ConfigurationManager.AppSettings["Title"].ToString();
+    Boolean includeBrowserSync = Convert.ToBoolean(System.Configuration.ConfigurationManager.AppSettings["IncludeBrowserSync"]);
+    string version = "1.0.0.0";
+
+
+    string currentRoute = "/";
+
+    foreach (string key in HttpContext.Current.Request.QueryString.AllKeys) // <-- No duplicates returned.
+    {
+        if (key == "CurrentRoute")
+        {
+            currentRoute = HttpContext.Current.Request.QueryString[key];
+        }
+    }
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv=”Pragma” content=”no-cache”>
+    <meta http-equiv=”Expires” content=”-1″>
+    <meta http-equiv=”CACHE-CONTROL” content=”NO-CACHE”>
+
+    <base href="/" />
+
+    <script>
+        history.pushState({}, null, "@currentRoute");
+    </script>
+
+    <link rel="stylesheet" href="~/Application/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Application/Content/bootstrap-datepicker.min.css">
+    <link href="~/Application/Content/alertify.core.css" rel="stylesheet" />
+    <link href="~/Application/Content/alertify.bootstrap.css" rel="stylesheet" />
+    <script src="~/Application/Scripts/jquery.min.js"></script>
+    <script src="~/Application/Scripts/bootstrap.min.js"></script>
+    <script src="~/Application/Scripts/alertify.min.js"></script>
+    <script src="~/Application/Scripts/bootstrap-datepicker.min.js"></script>
+
+
+  
+
+    <!-- Polyfill(s) for older browsers -->
+
+    <script src="~/Scripts/core.min.js"></script>
+    <!--<script src="~/node_modules/es6-shim/es6-shim.min.js"></script>-->
+
+    <script src="~/Scripts/zone.min.js"></script>
+    <script src="~/Scripts/Reflect.js"></script>
+    <script src="~/Scripts/system.src.js"></script>
+    <link href="~/Application/Content/bootstrap.css" rel="stylesheet" />
+    <!---<link href="~/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />-->
+
+    <link href="~/Application/Content/Style.css" rel="stylesheet" />
+    <link href="~/Application/Content/spinner.css" rel="stylesheet" />
+
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        <script src="~/node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
+        <script src="~/scripts/angular2-dev.min.js?version=4"></script>
+
+        <!-- 2. Configure SystemJS -->
+        <script src="~/systemjs.config.js"></script>
+        <script>
+            System.import('application/main.js').catch(function (err) { console.error(err); });
+        </script>
+    }
+
+
+</head>
+
+<!-- 3. Display the application -->
+<body>
+
+    <codeproject-application title="@title" currentRoute="@currentRoute" version="@version">
+
+        <div>
+            ...loading
+        </div>
+
+    </codeproject-application>
+
+    @if (HttpContext.Current.IsDebuggingEnabled == true && includeBrowserSync == true)
+    {
+
+            <!-- BrowserSync:SNIPPET-->
+        <script type='text/javascript' id="__bs_script__">
+            //<![CDATA[
+            document.write("<script async src='http://HOST:PORT/browser-sync/browser-sync-client.js'><\/script>".replace("HOST", location.hostname).replace("PORT", parseInt(location.port) + 1));
+            //]]>
+        </script>
+            <!-- BS:BrowserSyncs:END-->
+    }
+
+    @if (HttpContext.Current.IsDebuggingEnabled == false)
+    {     
+        <script src="~/scripts/angular2.min.js?version=@version"></script>
+    }
+
+</body>
+</html>

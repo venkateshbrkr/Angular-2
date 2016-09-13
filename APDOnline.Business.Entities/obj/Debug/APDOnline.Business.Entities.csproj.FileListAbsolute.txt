@@ -1,0 +1,4 @@
+C:\Work\APD\APDOnline.Business.Entities\bin\Debug\APDOnline.Business.Entities.dll
+C:\Work\APD\APDOnline.Business.Entities\bin\Debug\APDOnline.Business.Entities.pdb
+C:\Work\APD\APDOnline.Business.Entities\obj\Debug\APDOnline.Business.Entities.dll
+C:\Work\APD\APDOnline.Business.Entities\obj\Debug\APDOnline.Business.Entities.pdb

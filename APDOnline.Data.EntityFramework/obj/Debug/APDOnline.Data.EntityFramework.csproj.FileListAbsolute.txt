@@ -1,0 +1,15 @@
+C:\Work\APD\APDOnline.Data.EntityFramework\bin\Debug\APDOnline.Data.EntityFramework.dll.config
+C:\Work\APD\APDOnline.Data.EntityFramework\bin\Debug\APDOnline.Data.EntityFramework.dll
+C:\Work\APD\APDOnline.Data.EntityFramework\bin\Debug\APDOnline.Data.EntityFramework.pdb
+C:\Work\APD\APDOnline.Data.EntityFramework\bin\Debug\APDOnline.Business.Entities.dll
+C:\Work\APD\APDOnline.Data.EntityFramework\bin\Debug\APDOnline.Interfaces.dll
+C:\Work\APD\APDOnline.Data.EntityFramework\bin\Debug\EntityFramework.dll
+C:\Work\APD\APDOnline.Data.EntityFramework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Work\APD\APDOnline.Data.EntityFramework\bin\Debug\System.Linq.Dynamic.dll
+C:\Work\APD\APDOnline.Data.EntityFramework\bin\Debug\APDOnline.Business.Entities.pdb
+C:\Work\APD\APDOnline.Data.EntityFramework\bin\Debug\APDOnline.Interfaces.pdb
+C:\Work\APD\APDOnline.Data.EntityFramework\bin\Debug\EntityFramework.xml
+C:\Work\APD\APDOnline.Data.EntityFramework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Work\APD\APDOnline.Data.EntityFramework\obj\Debug\APDOnline.Data.EntityFramework.csprojResolveAssemblyReference.cache
+C:\Work\APD\APDOnline.Data.EntityFramework\obj\Debug\APDOnline.Data.EntityFramework.dll
+C:\Work\APD\APDOnline.Data.EntityFramework\obj\Debug\APDOnline.Data.EntityFramework.pdb

@@ -1,0 +1,7 @@
+C:\Work\APD\APDOnline.Interfaces\bin\Debug\APDOnline.Interfaces.dll
+C:\Work\APD\APDOnline.Interfaces\bin\Debug\APDOnline.Interfaces.pdb
+C:\Work\APD\APDOnline.Interfaces\bin\Debug\APDOnline.Business.Entities.dll
+C:\Work\APD\APDOnline.Interfaces\bin\Debug\APDOnline.Business.Entities.pdb
+C:\Work\APD\APDOnline.Interfaces\obj\Debug\APDOnline.Interfaces.csprojResolveAssemblyReference.cache
+C:\Work\APD\APDOnline.Interfaces\obj\Debug\APDOnline.Interfaces.dll
+C:\Work\APD\APDOnline.Interfaces\obj\Debug\APDOnline.Interfaces.pdb

@@ -1,0 +1,7 @@
+C:\Users\Venkat\Desktop\Coding\G\TodayFinal\Final\APDOnline.Interfaces\bin\Debug\Online.Interfaces.dll
+C:\Users\Venkat\Desktop\Coding\G\TodayFinal\Final\APDOnline.Interfaces\bin\Debug\Online.Interfaces.pdb
+C:\Users\Venkat\Desktop\Coding\G\TodayFinal\Final\APDOnline.Interfaces\bin\Debug\Online.Business.Entities.dll
+C:\Users\Venkat\Desktop\Coding\G\TodayFinal\Final\APDOnline.Interfaces\bin\Debug\Online.Business.Entities.pdb
+C:\Users\Venkat\Desktop\Coding\G\TodayFinal\Final\APDOnline.Interfaces\obj\Debug\Online.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\Venkat\Desktop\Coding\G\TodayFinal\Final\APDOnline.Interfaces\obj\Debug\Online.Interfaces.dll
+C:\Users\Venkat\Desktop\Coding\G\TodayFinal\Final\APDOnline.Interfaces\obj\Debug\Online.Interfaces.pdb

@@ -1,0 +1,64 @@
+﻿
+<style>
+    .navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
+        border-top-color: #f0f0f0;
+        border-bottom-color: #f0f0f0;
+        border-width: 6px;
+        margin-top: 6px;
+    }
+</style>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>       
+            <a class="navbar-brand" [routerLink]="['/home/home']">{{title}}</a>     
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" [hidden]="!isAuthenicated">
+                <li><a [routerLink]="['/customer/customermaintenance']">APD Maintenance</a></li>
+                <li><a [routerLink]="['/customer/customerinquiry']">APD Inquiry</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="menuitem" *ngFor="#menuItem of MenuItemss">
+                    <a href="{{menuItem.module}}" data-toggle="dropdown" *ngIf="!menuItem.menus">{{menuItem.module}}</a>
+                    <a href="{{menuItem.module}}" data-toggle="dropdown" *ngIf="menuItem.menus">{{menuItem.module}}&nbsp;&nbsp;&nbsp;<span class="caret"></span></a>
+                    <ul class="dropdown-menu" *ngIf="menuItem.menus">
+                        <li *ngFor="#submenu of menuItem.menus">
+                            <a href="{{submenu.route}}">{{submenu.description}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-right">
+                <li class="menuitem">
+                    <a [routerLink]="['/customer/customermaintenance']">&nbsp;PTR&nbsp;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container body-content" style="padding-top: 20px;">
+    <router-outlet></router-outlet>
+    <hr />
+    <footer>
+        <p>&copy; 2016 - My ASP.NET Application &nbsp;{{version}}</p>
+    </footer>
+</div>
+
+<div *ngIf="blockUI">
+    <div class="in modal-backdrop spinner-overlay"></div>
+    <div class="spinner-message-container" aria-live="assertive" aria-atomic="true">
+        <!--   <div class="spinner-message">loading...</div>-->
+        <div class="loading-message">
+            <img src="application/content/images/loading-spinner-grey.gif" class="rotate90">
+            <span>&nbsp;&nbsp;please wait...</span>
+        </div>
+
+    </div>
+</div>
+
